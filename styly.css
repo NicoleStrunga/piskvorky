@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.title_table {
+  background-color: #283e50;
+  color: #ffffff;
+}
+.title_page {
+  background-image: linear-gradient(#615dad, #ffc8da);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 7rem;
+  padding-right: 30rem;
+  text-align: center;
+}
+
+.b_pravidla {
+  background-color: #1fcca4;
+}
+
+.b_zacni {
+  background-color: #0197f6;
+}
