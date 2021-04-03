@@ -3,44 +3,41 @@ html {
 }
 
 body {
-  margin: 0;
+  background: linear-gradient(#615dad, #ffc8da);
+  line-height: 1.5;
+  text-align: center;
+  font-family: sans-serif;
+  background-size: cover;
+  height: 100%;
 }
 
-.title_table {
-  display: block;
-  background-color: #283e50;
-  color: #ffffff;
-  text-align: center;
-  border: 0px solid #615dad;
-  border-radius: 7px 7px 0px 0px;
+.container_main {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  color: white;
+  margin: auto;
 }
 
 .foto_uvodni {
-  display: block;
+  border-radius: 7px 7px 0 0;
   width: 100%;
-  border: 0px solid #615dad;
-  border-radius: 10px 10px 0px 0px;
 }
 
-.h1 {
-  font-family: 'lobster';
+h1 {
+  font-family: 'lobster', cursive;
   font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 0;
+  margin-top: 15px;
 }
 
-.title_page {
-  background-image: linear-gradient(#615dad, #ffc8da);
-  text-align: center;
-  padding-top: 5rem;
-  padding-left: 27rem;
-  padding-bottom: 10rem;
-  padding-right: 27rem;
+.text {
+  background-color: #283e50;
 }
 
-.main_description {
-  font-family: sans-serif;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  text-align: center;
+p {
+  padding: 0 20px 15px 20px;
 }
 
 .b_pravidla {
@@ -79,6 +76,14 @@ a {
   text-decoration: none;
 }
 
+.container_rules {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  color: white;
+  margin: auto;
+}
+
 .b_uvodni_stranka {
   background-color: #1fcca4;
   border: none;
@@ -93,4 +98,28 @@ a {
 }
 .b_uvodni_stranka:hover {
   background-color: #1cbb96;
+}
+
+.rules_list {
+  text-align: left;
+  margin: 0;
+}
+
+.rules_images img {
+  width: 145px;
+}
+
+.rules_list img {
+  width: 1em;
+  height: 1em;
+  filter: invert(100%);
+}
+
+.rules_list li {
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+figure {
+  font-size: 10px;
 }
