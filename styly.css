@@ -1,3 +1,7 @@
+html {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -18,8 +22,8 @@ body {
   border-radius: 10px 10px 0px 0px;
 }
 
-.uvodni_nadpis {
-  font-family: lobster;
+.h1 {
+  font-family: 'lobster';
   font-size: 40px;
 }
 
@@ -73,4 +77,20 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.b_uvodni_stranka {
+  background-color: #1fcca4;
+  border: none;
+  color: white;
+  text-align: center;
+  display: inherit;
+  margin-bottom: 2px;
+  height: 40px;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+.b_uvodni_stranka:hover {
+  background-color: #1cbb96;
 }
