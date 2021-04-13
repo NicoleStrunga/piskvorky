@@ -125,10 +125,13 @@ figure {
 }
 
 .container_play_game {
-  margin: 180px auto;
+  margin: 70px auto;
   max-width: 80vmin;
   color: white;
-  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* margin-bottom: 10px; */
 }
 
 .play_title {
@@ -145,7 +148,7 @@ figure {
   color: white;
   text-align: center;
   display: inherit;
-  margin-bottom: 2px;
+  /* margin-bottom: 2px; */
 }
 .icon_btn1:hover {
   background-color: #1cbb96;
@@ -167,19 +170,13 @@ figure {
   font-size: 30px;
 }
 
-.icon_symbol {
-  color: white;
+.icon_buttons {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.icon_btn2 {
-  background-color: #0197f6;
-  border: none;
-  color: white;
-  text-align: center;
-  display: inherit;
-}
-.b_zacni:hover {
-  background-color: #0090e9;
+.icon_symbol {
+  filter: invert(100%);
 }
 
 .policko {
@@ -196,7 +193,7 @@ figure {
 }
 .game_field {
   display: flex;
-  flex-flow: column;
+  flex-flow: wrap;
   width: 100%;
-  border: 1px;
+  border: 1px solid black;
 }
