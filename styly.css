@@ -209,3 +209,17 @@ figure {
   padding-bottom: 20px;
   align-items: center;
 }
+
+.board__field--circle {
+  background-image: url(Piskvorky_rules/circle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+}
+
+.board__field--cross {
+  background-image: url(Piskvorky_rules/cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+}
