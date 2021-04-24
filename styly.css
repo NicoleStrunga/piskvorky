@@ -3,7 +3,9 @@ html {
 }
 
 body {
-  background: linear-gradient(#615dad, #ffc8da);
+  background-image: linear-gradient(#615dad, #ffc8da);
+  min-height: 100vh;
+  margin: 0;
   line-height: 1.5;
   text-align: center;
   font-family: sans-serif;
@@ -144,10 +146,12 @@ figure {
 
 .icon_btn1 {
   background-color: #1fcca4;
+  width: auto;
+  height: 50px;
   border: none;
   color: white;
   text-align: center;
-  display: inherit;
+  /* display: flex; */
   margin: 2px;
   border-radius: 7%;
 }
@@ -157,10 +161,12 @@ figure {
 
 .icon_btn2 {
   background-color: #0197f6;
+  width: auto;
+  height: 50px;
   border: none;
   color: white;
   text-align: center;
-  display: inherit;
+  /* display: flex; */
   margin: 2px;
   border-radius: 7%;
 }
@@ -183,11 +189,17 @@ figure {
 }
 
 .policko {
-  width: 10%;
+  /* width: 10%;
   height: 0;
   background-color: transparent;
   border: 1px solid black;
-  padding-bottom: 10%;
+  padding-bottom: 10%; */
+  width: calc(100% / 10);
+  height: 8vmin;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: 1px solid black;
 }
 .policko:hover,
 .policko:focus {
@@ -204,6 +216,7 @@ figure {
   flex-flow: wrap;
   width: 100%;
   border: 1px solid black;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .play_info {
