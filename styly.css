@@ -191,7 +191,6 @@ figure {
 }
 .policko:hover,
 .policko:focus {
-  background: rgba(255, 255, 255, 0.25);
   opacity: 70%;
   cursor: pointer;
 }
@@ -220,9 +219,9 @@ figure {
   background-image: url(Piskvorky_rules/circle.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 65%;
-  animation-name: animateSymbol;
-  animation-duration: 0.2s;
+  background-size: 70%;
+  animation-name: growingSymbol;
+  animation-duration: 0.3s;
 }
 
 .board__field--cross {
@@ -231,7 +230,7 @@ figure {
   background-position: center;
   background-size: 70%;
   animation-name: growingSymbol;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
 }
 
 @keyframes growingSymbol {
