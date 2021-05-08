@@ -2,20 +2,31 @@
 
 let player = 'circle';
 
-const symbol = document.querySelector('.icon_symbol');
+const symbolElm = document.querySelector('.icon_symbol');
 
 const addSymbol = (event) => {
   if (player === 'circle') {
     event.target.classList.add('board__field--circle');
     player = 'cross';
-    symbol.src = 'Piskvorky_rules/cross.svg';
+    symbolElm.src = 'Piskvorky_rules/cross.svg';
   } else {
     event.target.classList.add('board__field--cross');
     player = 'circle';
-    symbol.src = 'Piskvorky_rules/circle.svg';
+    symbolElm.src = 'Piskvorky_rules/circle.svg';
   }
   event.target.disabled = true;
-  isWinningMove(event.target);
+
+  if (isWinningMove(event.target)) {
+    setTimeout(() => {
+      if (player === 'cross') {
+        confirm('Circle player is winner. New Game?');
+        location.reload();
+      } else {
+        confirm('Cross player is winner. New game?');
+        location.reload();
+      }
+    }, 200);
+  }
 };
 
 const fieldElm = document.querySelectorAll('.policko');
@@ -32,17 +43,65 @@ const getSymbol = (fieldElm) => {
 };
 
 const boardSize = 10;
-const fields = document.querySelectorAll('.policko');
 
 const getField = (row, column) => fieldElm[row * boardSize + column];
 
 const getPosition = (fieldElm) => {
   let fieldIndex = 0;
-  while (fieldIndex < fields.length && btnsElm !== fields[fieldIndex]) {
+  while (fieldIndex < fieldElm.length && fieldElm !== fieldElm[fieldIndex]) {
     fieldIndex += 1;
   }
   return {
     row: Math.floor(fieldIndex / boardSize),
     column: fieldIndex % boardSize,
   };
+};
+
+const isWinningMove = (fieldElm) => {
+  const origin = getPosition(fieldElm);
+  const symbol = getSymbol(fieldElm);
+
+  let i;
+
+  let inRow = 1;
+  i = origin.column;
+  while (i > 0 && symbol === getSymbol(getField(origin.row, i - 1))) {
+    inRow += 1;
+    i -= 1;
+  }
+
+  // Koukni doprava
+  i = origin.column;
+  while (
+    i < boardSize - 1 &&
+    symbol === getSymbol(getField(origin.row, i + 1))
+  ) {
+    inRow += 1;
+    i += 1;
+  }
+
+  let inColumn = 1;
+  // Koukni nahoru
+  i = origin.row;
+  while (i > 0 && symbol === getSymbol(getField(i - 1, origin.column))) {
+    inColumn += 1;
+    i -= 1;
+  }
+
+  // Koukni dolu
+  i = origin.row;
+  while (
+    i < boardSize - 1 &&
+    symbol === getSymbol(getField(i + 1, origin.column))
+  ) {
+    inColumn += 1;
+    i += 1;
+  }
+
+  if (inColumn >= 5) {
+    console.log('winner');
+    return true;
+  }
+  console.log('smůla');
+  return false;
 };
