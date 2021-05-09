@@ -43,12 +43,13 @@ const getSymbol = (fieldElm) => {
 };
 
 const boardSize = 10;
+const fields = document.querySelectorAll('.policko');
 
 const getField = (row, column) => fieldElm[row * boardSize + column];
 
 const getPosition = (fieldElm) => {
   let fieldIndex = 0;
-  while (fieldIndex < fieldElm.length && fieldElm !== fieldElm[fieldIndex]) {
+  while (fieldIndex < fields.length && fieldElm !== fields[fieldIndex]) {
     fieldIndex += 1;
   }
   return {
@@ -78,6 +79,11 @@ const isWinningMove = (fieldElm) => {
   ) {
     inRow += 1;
     i += 1;
+  }
+
+  if (inRow >= 5) {
+    console.log('winner');
+    return true;
   }
 
   let inColumn = 1;
